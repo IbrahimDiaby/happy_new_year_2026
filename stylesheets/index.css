@@ -7,15 +7,21 @@
   color: white;
 }
 
-:root{
-  --primary : #001faa;
+:root {
+  --primary: #001faa;
   --secondary: #800080;
   --tertiary: #000000;
 }
 
 body {
   gap: 20px 20px;
-  background: linear-gradient(135deg, var(--primary), var(--secondary), var(--secondary), var(--primary));
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary),
+    var(--secondary),
+    var(--primary)
+  );
 }
 
 header,
@@ -45,51 +51,64 @@ footer {
 }
 
 /* Classes */
-.title{
+.title {
   font-size: 4rem;
 }
 
-.animate1{
-  animation: top_to_bottom 6s cubic-bezier(0.455, 0.03, 0.515, 0.955) calc(var(--id)*100ms) infinite normal forwards;
+.animate1 {
+  animation: top_to_bottom 6s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+    calc(var(--id) * 100ms) infinite normal forwards;
 }
 
-.animate2{
-  animation: bottom_to_top 6s cubic-bezier(0.455, 0.03, 0.515, 0.955) calc(var(--id)*100ms) infinite normal forwards;
+.animate2 {
+  animation: bottom_to_top 6s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+    calc(var(--id) * 100ms) infinite normal forwards;
 }
 
-.slider{
-  animation: slide 6s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s infinite normal forwards;
+.slider {
+  animation: slide 6s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s infinite normal
+    forwards;
 }
 
 @keyframes slide {
-  from{
+  from {
     transform: translateX(-100px);
     opacity: 0;
   }
-  to{
+  to {
     transform: translateX(0);
     opacity: 1;
   }
 }
 
 @keyframes top_to_bottom {
-  from{
+  from {
     transform: translateY(-100px);
     opacity: 0;
   }
-  to{
+  to {
     transform: translateY(0);
     opacity: 1;
   }
 }
 
 @keyframes bottom_to_top {
-  from{
+  from {
     transform: translateY(100px);
     opacity: 0;
   }
-  to{
+  to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+@media screen and (width <= 767px) {
+  .title {
+    font-size: 2rem;
+    text-align: center;
+  }
+  span {
+    font-size: 8rem;
   }
 }
